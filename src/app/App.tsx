@@ -2,15 +2,19 @@ import { useState, useEffect } from 'react';
 import svgPaths from "./imports/svg-6sovak61ez";
 import imgAdobeExpressFile31 from "figma:asset/7ba16f5335969b66c314f7955ee4897ab548acd6.png";
 
+// =================================================================
+// 📌 ส่วนที่ 1: เมนูนำทางด้านบน (HEADER / NAVIGATION)
+// =================================================================
 function Navigation() {
   const [activeSection, setActiveSection] = useState('home');
 
+  // ✏️ [จุดแก้ไข 1]: รายการเมนูภาษาไทย
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About me' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'certifications', label: 'Certifications' },
-    { id: 'contacts', label: 'Contacts' }
+    { id: 'home', label: 'หน้าแรก' },
+    { id: 'about', label: 'เกี่ยวกับฉัน' },
+    { id: 'education', label: 'ประวัติการศึกษา' },
+    { id: 'motto', label: 'คติประจำใจ' },
+    { id: 'contacts', label: 'ติดต่อเรา' }
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -130,8 +134,8 @@ function SocialIcon({ type }: { type: 'instagram' | 'twitter' }) {
 // ⭐ [ตรงนี้คือเวลคัม สามารถเปลี่ยนชื่อและตำแหน่งงานได้ตามต้องการ]
 // =================================================================
 function HeroSection() {
-  const scrollToProjects = () => {
-    const element = document.getElementById('projects');
+  const scrollToEducation = () => {
+    const element = document.getElementById('education');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -176,14 +180,14 @@ function HeroSection() {
             </h1>
           </div>
           
-          {/* ปุ่มกดดูผลงาน */}
+          {/* ปุ่มกดดูประวัติการศึกษา */}
           <button 
-            onClick={scrollToProjects}
+            onClick={scrollToEducation}
             className="group border-2 border-[#f8f7f9] px-8 py-4 rounded-2xl transition-all duration-300 hover:bg-[#f8f7f9] hover:text-[#1f1f1f]"
           >
             {/* 👇 [แก้ไขข้อความบนปุ่มได้ที่นี่] 👇 */}
             <span className="font-['Poppins:Bold',_sans-serif] text-[24px] text-[#f8f7f9] group-hover:text-[#1f1f1f] transition-colors duration-300">
-              VIEW MY PROJECTS
+              ดูประวัติการศึกษา (EDUCATION)
             </span>
           </button>
         </div>
@@ -209,140 +213,62 @@ function AboutSection() {
   return (
     <section id="about" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="font-['Poppins:Bold',_sans-serif] text-[96px] text-[#f8f7f9] mb-12">
-          About me
+        <h2 className="font-['Poppins:Bold',_sans-serif] text-[64px] lg:text-[96px] text-[#f8f7f9] mb-12">
+          เกี่ยวกับฉัน (About me)
         </h2>
         
         <div className="max-w-4xl">
+          {/* ✏️ [จุดแก้ไข 3.1]: ข้อความแนะนำตัว ย่อหน้าที่ 1 */}
           <p className="font-['Poppins:Regular',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] leading-[1.5] mb-8">
             I'm Dynamic and results-driven Senior Business Development Associate with a robust background in sales, client relations, and Agile product management.
           </p>
+          {/* ✏️ [จุดแก้ไข 3.2]: ข้อความแนะนำตัว ย่อหน้าที่ 2 */}
           <p className="font-['Poppins:Regular',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] leading-[1.5]">
             I have a proven track record of exceeding targets, driving revenue growth, and leading high-performing teams. Experienced in utilizing data analytics, market research, and innovative strategies to achieve business objectives. Certified Scrum Product Owner (CSPO) with advanced expertise in Agile methodologies, product backlog management, and sprint planning. Passionate about continuous improvement and delivering customer-centric solutions that drive operational efficiency and market success.
           </p>
-        </div>
-
-        {/* Education */}
-        <div className="mt-16">
-          <h3 className="font-['Poppins:Bold',_sans-serif] text-[24px] text-[#f8f7f9] mb-8">
-            EDUCATION
-          </h3>
-          <div className="max-w-4xl">
-            <h4 className="font-['Poppins:ExtraBold',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] mb-2">
-              National Institute of Technology Puducherry
-            </h4>
-            <p className="font-['Poppins:Medium',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] leading-[1.5]">
-              I hold a Bachelor of Technology degree in Electronics and Communications from National Institute of Technology Puducherry, with a cumulative GPA of 5.29/10.0. My education has equipped me with a solid foundation in technical skills and problem-solving
-            </p>
-          </div>
-        </div>
-
-        {/* Experience */}
-        <div className="mt-16">
-          <h3 className="font-['Poppins:Bold',_sans-serif] text-[24px] text-[#f8f7f9] mb-8">
-            Experience
-          </h3>
-          <div className="space-y-12">
-            <ExperienceItem
-              title="PRODUCT MANAGER"
-              period="2024 — current"
-              description="As a Product Manager at TRANSOND Systems Private Limited Joint Venture and EOR of AICTEC India, I bridge the gap between cutting-edge products and customer needs. My responsibilities include comprehensive market research to identify trends, customer pain points, and opportunities, while collaborating with cross-functional teams to refine product strategies. I leverage data insights to inform the product roadmap, prioritizing features that maximize user value and drive business growth. Additionally, I ensure smooth product launches that enhance functionality and deliver an exceptional user experience."
-            />
-            <ExperienceItem
-              title="SENIOR BUSINESS DEVELOPMENT ASSOCIATE"
-              period="2021 — 2022"
-              description="As a senior business development associate I established and nurtured relationships with prospective clients, driving business growth and consistently exceeding sales targets. By facilitating virtual presentations via Zoom, I educated clients on product offerings. I developed and executed targeted sales strategies, securing new business opportunities and significantly contributing to revenue growth. Leading a dynamic team of business development associates, I provided mentorship and guidance to ensure high performance. Conducting thorough market research, I identified new markets and customer segments, expanding the academy's footprint."
-            />
-            <ExperienceItem
-              title="SENIOR ADMISSION COUNSELLOR"
-              period="2020 — 2021"
-              description="As a senior admission counsellor established and maintained communication with prospective clients, cultivating strategic partnerships and consistently meeting revenue targets. I provided comprehensive guidance to prospective students on course selection, admission requirements, and career pathways, ensuring informed decisions. Managing the end-to-end admission process, I consistently exceeded enrolment targets. Collaborating with marketing and academic teams, I aligned admission strategies with organizational goals, enhancing program visibility."
-            />
-            <ExperienceItem
-              title="BUSINESS DEVELOPMENT ASSOCIATE"
-              period="2018 — 2019"
-              description="As a business development associate have I contacted potential clients to set up meetings and counselled them on learning pedagogies and personalized learning experiences, achieving sales targets consistently. I directed and mentored a team of 10 business development representatives, providing guidance to achieve individual and collective goals. I developed and implemented strategic plans to enhance market penetration and customer acquisition."
-            />
-          </div>
         </div>
       </div>
     </section>
   );
 }
 
-function ExperienceItem({ title, period, description }: { title: string; period: string; description: string }) {
-  return (
-    <div className="max-w-4xl">
-      <h4 className="font-['Poppins:ExtraBold',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] mb-1">
-        {title}
-      </h4>
-      <p className="font-['Poppins:ExtraLight',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] mb-3">
-        {period}
-      </p>
-      <p className="font-['Poppins:Medium',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] leading-[1.5]">
-        {description}
-      </p>
-    </div>
-  );
-}
-
 // =================================================================
-// 📌 ส่วนที่ 4: ผลงาน (PROJECTS)
-// ⭐ [ตรงนี้คือส่วนแสดงผลงาน สามารถเพิ่ม/แก้ไขโปรเจกต์ได้]
+// 📌 ส่วนที่ 4: ประวัติการศึกษา (EDUCATION)
+// ⭐ [ตรงนี้คือส่วนแสดงประวัติการศึกษา สามารถแก้ไขหรือเพิ่มระดับการศึกษาได้]
 // =================================================================
-function ProjectsSection() {
-  const projects = [
+function EducationSection() {
+  const educationList = [
     {
-      title: "Energic - EV charging station management system",
-      period: "07/2024 — current",
-      description: "Energic provides a comprehensive and user-friendly EV charging station management system (CSMS) that helps with Real time locating, scheduling, and managing charging stations and maintenance alerts."
+      title: "ปริญญาตรี — วิทยาศาสตรบัณฑิต หรือ วิศวกรรมศาสตรบัณฑิต",
+      period: "2563 — 2567 (2020 — 2024)",
+      description: "มหาวิทยาลัย / คณะ / สาขาวิชา — เกรดเฉลี่ย (GPA): 3.50 รายละเอียดวิชาเอกหรือโปรเจกต์จบการศึกษา"
     },
     {
-      title: "Product Roadmap for an Online Grocery Delivery Platform",
-      period: "06/2024 — 07/2024",
-      description: "A 12-month roadmap for an online grocery delivery platform that can achieve significant growth, enhance customer satisfaction, and establish itself as a market leader. This strategy ensures a balanced focus on user experience, operational efficiency, and continuous innovation."
+      title: "มัธยมศึกษาตอนปลาย — แผนการเรียนวิทยาศาสตร์-คณิตศาสตร์",
+      period: "2560 — 2563 (2017 — 2020)",
+      description: "โรงเรียนมัธยมศึกษา — เกรดเฉลี่ยสะสม (GPAX): 3.75 กิจกรรมเด่นและผลงานวิชาการ"
     },
     {
-      title: "IPL Best XI project",
-      period: "05/2023- 07/2023",
-      description: "A python project to find IPL Best XI by Involving Players from All 10 Teams of IPL 2023 season, by analysing and understanding the various factors that influence team selection and to develop effective strategies for selecting IPL Best XI"
-    },
-    {
-      title: "Market Analysis",
-      period: "03/2023 — 05/2023",
-      description: "A python project to find IPL Best XI by Involving Players from All 10 Teams of IPL 2023 season, by analysing and understanding the various factors that influence team selection and to develop effective strategies for selecting IPL Best XI"
-    },
-    {
-      title: "Financial Analysis",
-      period: "02/2023 — 04/2023",
-      description: "Analysed the past 5 years financial statements of Jj associates to understand the business's financial health and performance. Identified trends, compared against industry benchmarks, and made recommendations for improvements"
-    },
-    {
-      title: "Conducted User Research",
-      period: "02/2023 — 04/2024",
-      description: "Performed user research to understand the needs, preferences, and behaviours of users. Used the research findings understand, what kind of design and feature improvements are expected by users in the next generation iPhone line-up."
-    },
-    {
-      title: "An efficient image authentication based on hamming code",
-      period: "07/2016 — 05/2017",
-      description: "This presents the emerging technique for image authentication based on hamming coding by combining Hamming code technique, Torus auto-morphism and bit rotation"
+      title: "มัธยมศึกษาตอนต้น",
+      period: "2557 — 2560 (2014 — 2017)",
+      description: "โรงเรียนมัธยมศึกษา — สำเร็จการศึกษาตามหลักสูตรการศึกษาขั้นพื้นฐาน"
     }
   ];
 
   return (
-    <section id="projects" className="py-20 relative">
+    <section id="education" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="font-['Poppins:Bold',_sans-serif] text-[96px] text-[#f8f7f9] mb-12">
-          Projects
+        <h2 className="font-['Poppins:Bold',_sans-serif] text-[64px] lg:text-[96px] text-[#f8f7f9] mb-12">
+          ประวัติการศึกษา (Education)
         </h2>
         
         <div className="space-y-8">
-          {projects.map((project, index) => (
-            <ProjectItem
+          {educationList.map((item, index) => (
+            <EducationItem
               key={index}
-              title={project.title}
-              period={project.period}
-              description={project.description}
+              title={item.title}
+              period={item.period}
+              description={item.description}
             />
           ))}
         </div>
@@ -351,7 +277,7 @@ function ProjectsSection() {
   );
 }
 
-function ProjectItem({ title, period, description }: { title: string; period: string; description: string }) {
+function EducationItem({ title, period, description }: { title: string; period: string; description: string }) {
   return (
     <div className="max-w-4xl relative">
       <div className="pl-8 relative">
@@ -372,54 +298,31 @@ function ProjectItem({ title, period, description }: { title: string; period: st
 }
 
 // =================================================================
-// 📌 ส่วนที่ 5: ใบประกาศนียบัตร / ใบรับรอง (CERTIFICATIONS)
+// 📌 ส่วนที่ 5: คติประจำใจ (MOTTO & INSPIRATION)
+// ⭐ [ตรงนี้คือส่วนคติประจำใจ สามารถเปลี่ยนคำคมและแนวคิดได้]
 // =================================================================
-function CertificationsSection() {
-  const certifications = [
-    {
-      title: "CERTIFICATION OF BUSINESS CORRESPONDENTS/FACILITATORS",
-      year: "2019",
-      organization: "Indian Institute of Banking & Finance"
-    },
-    {
-      title: "CERTIFIED SCRUM PRODUCT OWNER®",
-      year: "2024",
-      organization: "Scrum Alliance®"
-    },
-    {
-      title: "ADVANCE CERTIFIED SCRUM PRODUCT OWNER®",
-      year: "2024",
-      organization: "Scrum Alliance®"
-    }
-  ];
-
+function MottoSection() {
   return (
-    <section id="certifications" className="py-20 relative">
+    <section id="motto" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="font-['Poppins:Bold',_sans-serif] text-[96px] text-[#f8f7f9] mb-12">
-          Certifications
+        <h2 className="font-['Poppins:Bold',_sans-serif] text-[64px] lg:text-[96px] text-[#f8f7f9] mb-12">
+          คติประจำใจ (Motto)
         </h2>
         
-        <div className="space-y-8">
-          {certifications.map((cert, index) => (
-            <div key={index} className="max-w-4xl relative">
-              <div className="pl-8 relative">
-                <div className="absolute left-[-9px] top-[12px] w-[15px] h-[15px] bg-white/80 rounded-full backdrop-blur-sm" 
-                     style={{ filter: 'blur(0.5px)' }} />
-                <h3 className={`font-['Poppins:ExtraBold',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] mb-1 ${
-                  cert.title === "CERTIFICATION OF BUSINESS CORRESPONDENTS/FACILITATORS" ? "whitespace-nowrap" : ""
-                }`}>
-                  {cert.title}
-                </h3>
-                <p className="font-['Poppins:ExtraLight',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)] mb-2">
-                  {cert.year}
-                </p>
-                <p className="font-['Poppins:Medium',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)]">
-                  {cert.organization}
-                </p>
-              </div>
-            </div>
-          ))}
+        <div className="max-w-4xl space-y-8">
+          {/* การ์ดคติประจำใจหลัก */}
+          <div className="relative pl-8 border-l-2 border-white/30 bg-white/[0.02] p-8 rounded-r-2xl border-t border-b border-r border-white/5">
+            <div className="absolute -left-[9px] top-[24px] w-[16px] h-[16px] bg-white rounded-full backdrop-blur-sm" 
+                 style={{ filter: 'blur(0.5px)' }} />
+            <div className="text-[#f8f7f9]/20 text-[54px] font-serif leading-none mb-2">“</div>
+            {/* 👇 [แก้ไขคติประจำใจของคุณที่นี่] 👇 */}
+            <p className="font-['Poppins:Bold',_sans-serif] text-[26px] md:text-[34px] text-[#f8f7f9] leading-[1.4] mb-6 italic">
+              ความพยายามไม่เคยทรยศใคร ถ้าเราไม่หยุดพัฒนาตัวเอง
+            </p>
+            <p className="font-['Poppins:Medium',_sans-serif] text-[18px] md:text-[20px] text-[#f8f7f9]/60">
+              — คติพจน์ประจำใจในการดำเนินชีวิตและการทำงาน
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -434,11 +337,12 @@ function ContactsSection() {
   return (
     <section id="contacts" className="py-20 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="font-['Poppins:Bold',_sans-serif] text-[96px] text-[#f8f7f9] mb-12">
-          Contacts
+        <h2 className="font-['Poppins:Bold',_sans-serif] text-[64px] lg:text-[96px] text-[#f8f7f9] mb-12">
+          ติดต่อเรา (Contacts)
         </h2>
         
         <div className="space-y-4 max-w-4xl">
+          {/* ✏️ [จุดแก้ไข 6.1]: อีเมลของคุณ */}
           <div>
             <span className="font-['Poppins:ExtraBold',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)]">
               Email - 
@@ -447,6 +351,7 @@ function ContactsSection() {
               neo.maddison17@gmail.com
             </span>
           </div>
+          {/* ✏️ [จุดแก้ไข 6.2]: เบอร์โทรศัพท์ของคุณ */}
           <div>
             <span className="font-['Poppins:ExtraBold',_sans-serif] text-[24px] text-[rgba(248,247,249,0.5)]">
               Phone - 
@@ -468,8 +373,8 @@ export default function App() {
       <main>
         <HeroSection />
         <AboutSection />
-        <ProjectsSection />
-        <CertificationsSection />
+        <EducationSection />
+        <MottoSection />
         <ContactsSection />
       </main>
     </div>

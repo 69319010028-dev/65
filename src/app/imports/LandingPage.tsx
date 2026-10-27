@@ -1,3 +1,7 @@
+// =================================================================
+// 📌 ไฟล์ LandingPage.tsx (ไฟล์โค้ดดิบจาก Figma)
+// มีการกำกับจุดแก้ไขข้อความไว้ด้วยสัญลักษณ์ ✏️
+// =================================================================
 import svgPaths from "./svg-6sovak61ez";
 import imgAdobeExpressFile31 from "figma:asset/7ba16f5335969b66c314f7955ee4897ab548acd6.png";
 
@@ -6,27 +10,27 @@ function Frame4() {
     <div className="box-border content-stretch flex flex-row font-['Poppins:Regular',_sans-serif] gap-12 items-start justify-start leading-[0] not-italic p-0 relative shrink-0 text-[#f8f7f9] text-[18px] text-left text-nowrap w-[598px]">
       <div className="relative shrink-0">
         <p className="block leading-[normal] text-nowrap whitespace-pre">
-          Home
+          หน้าแรก
         </p>
       </div>
       <button className="[white-space-collapse:collapse] block cursor-pointer relative shrink-0">
         <p className="block leading-[normal] text-nowrap whitespace-pre">
-          About me
+          เกี่ยวกับฉัน
         </p>
       </button>
       <button className="[white-space-collapse:collapse] block cursor-pointer relative shrink-0">
         <p className="block leading-[normal] text-nowrap whitespace-pre">
-          Projects
+          ประวัติการศึกษา
         </p>
       </button>
       <button className="[white-space-collapse:collapse] block cursor-pointer relative shrink-0">
         <p className="block leading-[normal] text-nowrap whitespace-pre">
-          certification
+          คติประจำใจ
         </p>
       </button>
       <button className="[white-space-collapse:collapse] block cursor-pointer relative shrink-0">
         <p className="block leading-[normal] text-nowrap whitespace-pre">
-          Contacts
+          ติดต่อเรา
         </p>
       </button>
     </div>
@@ -140,20 +144,28 @@ function Frame6() {
   );
 }
 
+// =================================================================
+// 📌 ส่วนข้อความต้อนรับ (HERO / WELCOME SECTION)
+// =================================================================
+
+// ✏️ [จุดแก้ไข]: คำทักทายและชื่อของคุณ
 function Frame8() {
   return (
     <div className="box-border content-stretch flex flex-row gap-2.5 items-start justify-start p-[10px] relative shrink-0">
       <div className="font-['Poppins:Bold',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#f8f7f9] text-[24px] text-left text-nowrap">
+        {/* 👇 [แก้ไขชื่อของคุณตรงนี้] 👇 */}
         <p className="block leading-[normal] whitespace-pre">{`HI, I’M NEERAJ `}</p>
       </div>
     </div>
   );
 }
 
+// ✏️ [จุดแก้ไข]: ตำแหน่งงาน / อาชีพ (ตัวอักษรใหญ่)
 function Frame7() {
   return (
     <div className="box-border content-stretch flex flex-row gap-2.5 h-[210px] items-start justify-start p-[10px] relative shrink-0 w-[758px]">
       <div className="font-['Poppins:Bold',_sans-serif] h-[200px] leading-[96px] not-italic relative shrink-0 text-[#f8f7f9] text-[96px] text-left w-[740px]">
+        {/* 👇 [แก้ไขตำแหน่งงานตรงนี้] 👇 */}
         <p className="block mb-0">I’M A PRODUCT</p>
         <p className="block">{`MANAGER `}</p>
       </div>
@@ -178,12 +190,14 @@ function Frame11() {
   );
 }
 
+// ✏️ [จุดแก้ไข]: ข้อความบนปุ่มกด
 function Frame12() {
   return (
     <button className="box-border content-stretch cursor-pointer flex flex-row gap-2.5 items-start justify-start overflow-visible px-8 py-4 relative rounded-2xl shrink-0">
       <div className="absolute border-2 border-[#f8f7f9] border-solid inset-0 pointer-events-none rounded-2xl" />
       <div className="font-['Poppins:Bold',_sans-serif] leading-[0] not-italic relative shrink-0 text-[#f8f7f9] text-[24px] text-left text-nowrap">
-        <p className="block leading-[normal] whitespace-pre">{` VIEW MY PROJECTS`}</p>
+        {/* 👇 [แก้ไขข้อความบนปุ่มตรงนี้] 👇 */}
+        <p className="block leading-[normal] whitespace-pre">{` ดูประวัติการศึกษา (EDUCATION)`}</p>
       </div>
     </button>
   );
@@ -533,19 +547,14 @@ export default function LandingPage() {
         data-name="Adobe Express - file (3) 1"
         style={{ backgroundImage: `url('${imgAdobeExpressFile31}')` }}
       />
+      {/* ================================================================= */}
+      {/* 📌 ส่วนที่ 3: เกี่ยวกับฉัน (ABOUT ME & EDUCATION)                      */}
+      {/* ================================================================= */}
       <div className="absolute font-['Poppins:Bold',_sans-serif] h-[100px] leading-[0] left-[61px] not-italic text-[#f8f7f9] text-[96px] text-left top-[1218px] w-[715px]">
         <p className="block leading-[96px]">{`About me `}</p>
       </div>
-      <div className="absolute font-['Poppins:Bold',_sans-serif] h-[100px] leading-[0] left-[61px] not-italic text-[#f8f7f9] text-[96px] text-left top-[4001px] w-[407px]">
-        <p className="block leading-[96px]">Projects</p>
-      </div>
-      <div className="absolute font-['Poppins:Bold',_sans-serif] h-[81px] leading-[0] left-[61px] not-italic text-[#f8f7f9] text-[96px] text-left top-[5529px] w-[715px]">
-        <p className="block leading-[96px]">{`Certifications `}</p>
-      </div>
-      <div className="absolute font-['Poppins:Bold',_sans-serif] h-[81px] leading-[0] left-[61px] not-italic text-[#f8f7f9] text-[96px] text-left top-[6055px] w-[715px]">
-        <p className="block leading-[96px]">{`Contacts `}</p>
-      </div>
-      <Frame9 />
+
+      {/* ✏️ [จุดแก้ไข]: ข้อความแนะนำตัว */}
       <div className="absolute font-['Poppins:Regular',_sans-serif] h-[338px] leading-[normal] left-[139px] not-italic text-[24px] text-[rgba(248,247,249,0.5)] text-left top-[1328px] w-[1038px]">
         <p className="block mb-0">{`I'm Dynamic and results-driven Senior Business Development Associate with a robust background in sales, client relations, and Agile product management.`}</p>
         <p className="block">
@@ -559,10 +568,14 @@ export default function LandingPage() {
           efficiency and market success.
         </p>
       </div>
+
+      {/* ✏️ [จุดแก้ไข]: การศึกษา (EDUCATION) */}
       <div className="absolute font-['Poppins:Regular',_sans-serif] h-[216px] leading-[normal] left-[139px] not-italic text-[24px] text-[rgba(248,247,249,0.5)] text-left top-[1793px] w-[1038px]">
+        {/* ชื่อสถาบัน */}
         <p className="block font-['Poppins:ExtraBold',_sans-serif] mb-0">
           National Institute of Technology Puducherry
         </p>
+        {/* รายละเอียดการศึกษา */}
         <p className="block font-['Poppins:Medium',_sans-serif]">
           I hold a Bachelor of Technology degree in Electronics and
           Communications from National Institute of Technology Puducherry, with
@@ -730,6 +743,10 @@ export default function LandingPage() {
           Scrum Alliance®
         </p>
       </div>
+      {/* ================================================================= */}
+      {/* 📌 ส่วนที่ 6: ช่องทางติดต่อ (CONTACTS)                                */}
+      {/* ================================================================= */}
+      {/* ✏️ [จุดแก้ไข]: อีเมล */}
       <div className="absolute font-['Poppins:Regular',_sans-serif] h-[29px] leading-[0] left-[147px] not-italic text-[24px] text-[rgba(248,247,249,0.5)] text-left top-[6146px] w-[445px]">
         <p className="leading-[normal]">
           <span className="font-['Poppins:ExtraBold',_sans-serif]">{`Email - `}</span>
@@ -738,6 +755,7 @@ export default function LandingPage() {
           </span>
         </p>
       </div>
+      {/* ✏️ [จุดแก้ไข]: เบอร์โทรศัพท์ */}
       <div className="absolute font-['Poppins:Regular',_sans-serif] h-[29px] leading-[0] left-36 not-italic text-[24px] text-[rgba(248,247,249,0.5)] text-left top-[6185px] w-[445px]">
         <p className="leading-[normal]">
           <span className="font-['Poppins:ExtraBold',_sans-serif]">{`Phone - `}</span>
