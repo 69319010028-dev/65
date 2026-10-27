@@ -80,6 +80,10 @@ function Navigation() {
 }
 
 function SocialIcon({ type }: { type: 'instagram' | 'twitter' }) {
+  const url = type === 'instagram' 
+    ? 'https://www.instagram.com/sang_onname?dlrf=MTI2dGkwdTdoMmU0dA==' 
+    : 'https://twitter.com';
+
   const getPath = () => {
     if (type === 'instagram') {
       return (
@@ -121,11 +125,16 @@ function SocialIcon({ type }: { type: 'instagram' | 'twitter' }) {
   };
 
   return (
-    <button className="text-[#f8f7f9] hover:text-[#f8f7f9]/80 transition-colors duration-200">
+    <a 
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-[#f8f7f9] hover:text-[#f8f7f9]/80 transition-colors duration-200"
+    >
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24">
         {getPath()}
       </svg>
-    </button>
+    </a>
   );
 }
 
@@ -172,11 +181,11 @@ function HeroSection() {
           <div className="space-y-4">
             {/* 👇 [แก้ไขข้อความทักทายและชื่อของคุณได้ที่นี่] 👇 */}
             <h2 className="font-['Poppins:Bold',_sans-serif] text-[24px] text-[#f8f7f9]">
-              HI, I'M NEERAJ
+              HI, I'M SANG
             </h2>
             {/* 👇 [แก้ไขตำแหน่งงานของคุณได้ที่นี่] 👇 */}
             <h1 className="font-['Poppins:Bold',_sans-serif] text-[64px] lg:text-[96px] leading-[0.9] text-[#f8f7f9]">
-              I'M A PRODUCT<br />MANAGER
+              I'M A student
             </h1>
           </div>
           
@@ -187,7 +196,7 @@ function HeroSection() {
           >
             {/* 👇 [แก้ไขข้อความบนปุ่มได้ที่นี่] 👇 */}
             <span className="font-['Poppins:Bold',_sans-serif] text-[24px] text-[#f8f7f9] group-hover:text-[#1f1f1f] transition-colors duration-300">
-              ดูประวัติการศึกษา (EDUCATION)
+              เกี่ยวกับฉัน (about)
             </span>
           </button>
         </div>
@@ -197,7 +206,7 @@ function HeroSection() {
           {/* 👇 [เปลี่ยนรูปภาพโปรไฟล์ของคุณได้ที่นี่] 👇 */}
           <div
             className="w-full h-[600px] lg:h-[800px] bg-cover bg-center bg-no-repeat rounded-lg"
-            style={{ backgroundImage: `url('${imgAdobeExpressFile31}')` }}
+            style={{ backgroundImage: `url('/profile.jpg')` }}
           />
         </div>
       </div>
